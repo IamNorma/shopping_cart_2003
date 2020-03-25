@@ -9,6 +9,10 @@ class Product
   end
 
   def total_price
-    @unit_price *= @quantity
+    @unit_price *= @quantity.to_i
+  end
+
+  def is_hoarded?
+    @quantity.to_i >= 10
   end
 end
