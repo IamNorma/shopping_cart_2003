@@ -12,8 +12,12 @@ class ShoppingCart
   end
 
   def total_number_of_products
-    total_products = products.map do |product|
-      product += product
-    end 
+    products.quantity += products.quantity  
+  end
+
+  def products_by_category(category)
+    paper_products = products.find_all do |product|
+      product.category == :paper
+    end
   end
 end
